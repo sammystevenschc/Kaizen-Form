@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<!-- saved from url=(0072)file:///C:/Users/sammystevens/Downloads/shareable-kaizen-form%20(1).html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Kaizen Suggestion Form</title>
+    <style>
+        body {
+            font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+            margin: 0;
+            padding: 16px;
+            background-color: #f2f2f7;
+            color: #000;
+        }
+        h1 {
+            text-align: center;
+            color: #005596;
+            margin-bottom: 24px;
+        }
+        h2 {
+            color: #005596;
+            border-bottom: 1px solid #c7c7cc;
+            padding-bottom: 8px;
+            margin-top: 24px;
+            text-align: center;
+        }
+        .section {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 16px;
+            margin-bottom: 16px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin: 16px 0 4px 0;
+        }
+        input[type="text"],
+        input[type="date"],
+        input[type="number"],
+        textarea {
+            width: 100%;
+            padding: 12px;
+            box-sizing: border-box;
+            border: 1px solid #c7c7cc;
+            border-radius: 8px;
+            font-size: 16px;
+            margin-bottom: 16px;
+        }
+        textarea {
+            height: 120px;
+        }
+        .photo-input {
+            margin-top: 8px;
+            margin-bottom: 16px;
+        }
+        .note {
+            font-style: italic;
+            color: #8e8e93;
+            font-size: 14px;
+            margin: 8px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+        }
+        table, th, td {
+            border: 1px solid #c7c7cc;
+        }
+        th, td {
+            padding: 12px;
+            text-align: center;
+        }
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 16px 0;
+        }
+        .checkbox-item {
+            margin-right: 24px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+        }
+        .checkbox-item input {
+            margin-right: 8px;
+            width: 20px;
+            height: 20px;
+        }
+        button {
+            background-color: #005596;
+            color: white;
+            border: none;
+            padding: 16px;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            width: 100%;
+            margin-top: 24px;
+            cursor: pointer;
+            -webkit-appearance: none;
+        }
+        .required {
+            color: #ff3b30;
+        }
+        .footer {
+            text-align: center;
+            margin: 24px 0;
+            font-style: italic;
+            color: #8e8e93;
+        }
+        #shareContainer {
+            display: none;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+        #shareLink {
+            display: block;
+            background-color: #f2f2f7;
+            padding: 12px;
+            border-radius: 8px;
+            margin: 12px 0;
+            word-break: break-all;
+            font-family: monospace;
+        }
+        .share-button {
+            background-color: #007aff;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            margin: 8px 4px;
+            font-size: 14px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <h1>KAIZEN SUGGESTION FORM</h1>
+    
+    <form id="kaizenForm">
+        <div class="section">
+            <h2>EMPLOYEE INFORMATION</h2>
+            
+            <label for="name">Name <span class="required">*</span></label>
+            <input type="text" id="name" name="name" required="">
+            
+            <label for="date">Submission Date <span class="required">*</span></label>
+            <input type="date" id="date" name="date" required="">
+            
+            <label for="department">Department</label>
+            <input type="text" id="department" name="department">
+            
+            <label for="shift">Shift</label>
+            <input type="text" id="shift" name="shift">
+        </div>
+        
+        <div class="section">
+            <h2>OPPORTUNITY IDENTIFICATION</h2>
+            
+            <label for="title">Title of Improvement <span class="required">*</span></label>
+            <input type="text" id="title" name="title" required="">
+            
+            <label for="current-condition">Current Condition / Issue Description <span class="required">*</span></label>
+            <textarea id="current-condition" name="current_condition" required="" placeholder="Describe the current process or situation that needs improvement."></textarea>
+            
+            <label for="current-photo">Photo of Current Condition</label>
+            <input type="file" id="current-photo" name="current_photo" accept="image/*" class="photo-input">
+        </div>
+        
+        <div class="section">
+            <h2>IMPROVEMENT SUGGESTION</h2>
+            
+            <label for="proposed-improvement">Proposed Improvement <span class="required">*</span></label>
+            <textarea id="proposed-improvement" name="proposed_improvement" required="" placeholder="Describe your solution. How will it address the issue?"></textarea>
+            
+            <label for="proposed-work-date">Proposed Work Date</label>
+            <input type="date" id="proposed-work-date" name="proposed_work_date">
+            
+            <label for="proposed-photo">Photo of Proposed Improvement</label>
+            <input type="file" id="proposed-photo" name="proposed_photo" accept="image/*" class="photo-input">
+            <p class="note">Photos from other manufacturing sites or online photos may be used. We are looking for an example of what you have in mind.</p>
+        </div>
+        
+        <div class="section">
+            <h2>IMPLEMENTATION DETAILS</h2>
+            
+            <label>Resources Required:</label>
+            <table id="resources-table">
+                <tbody><tr>
+                    <th>Item</th>
+                    <th>Quantity</th>
+                </tr>
+                <tr>
+                    <td><input type="text" name="item[]"></td>
+                    <td><input type="number" name="quantity[]"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="item[]"></td>
+                    <td><input type="number" name="quantity[]"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="item[]"></td>
+                    <td><input type="number" name="quantity[]"></td>
+                </tr>
+            </tbody></table>
+            
+            <label for="implementation-time">Estimated Implementation Time</label>
+            <input type="text" id="implementation-time" name="implementation_time" placeholder="e.g., 2 hours, 3 days">
+            
+            <label for="training-time">Training Time (if applicable)</label>
+            <input type="text" id="training-time" name="training_time" placeholder="e.g., 1 hour">
+            
+            <label>Impact Areas:</label>
+            <div class="checkbox-group">
+                <div class="checkbox-item">
+                    <input type="checkbox" id="safety" name="impact_areas" value="Safety">
+                    <label for="safety">Safety</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="quality" name="impact_areas" value="Quality">
+                    <label for="quality">Quality</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="efficiency" name="impact_areas" value="Efficiency">
+                    <label for="efficiency">Efficiency</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="ergonomics" name="impact_areas" value="Ergonomics">
+                    <label for="ergonomics">Ergonomics</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="cost-reduction" name="impact_areas" value="Cost Reduction">
+                    <label for="cost-reduction">Cost Reduction</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="environmental" name="impact_areas" value="Environmental">
+                    <label for="environmental">Environmental</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="cleaning" name="impact_areas" value="Cleaning/Organization">
+                    <label for="cleaning">Cleaning</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="maintenance" name="impact_areas" value="Maintenance">
+                    <label for="maintenance">Maintenance</label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>IMPLEMENTATION (Optional)</h2>
+            
+            <label for="implementation-date">Implementation Date</label>
+            <input type="date" id="implementation-date" name="implementation_date">
+            
+            <label for="implementation-photo">Implementation Photo</label>
+            <input type="file" id="implementation-photo" name="implementation_photo" accept="image/*" class="photo-input">
+        </div>
+        
+        <button type="button" id="submitButton">Generate Shareable Link</button>
+    </form>
+    
+    <!-- Share container (visible after submission) -->
+    <div id="shareContainer" class="section">
+        <h2>SHARE YOUR KAIZEN SUGGESTION</h2>
+        <p>Use this link to share your completed Kaizen suggestion:</p>
+        <div id="shareLink"></div>
+        <div>
+            <button class="share-button" id="copyLink">Copy Link</button>
+            <button class="share-button" id="textLink">Send as Text</button>
+            <button class="share-button" id="emailLink">Send as Email</button>
+        </div>
+        <p class="note">Your Kaizen suggestion data has been saved in this browser. The link will open this form with all your data filled in.</p>
+    </div>
+    
+    <p class="footer">
+        Remember: No improvement is too small! Your ideas help make our workplace safer, more efficient, and better for everyone.
+    </p>
+    
+    <script>
+        // Check if there's a form ID in the URL when the page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check for form ID in URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const formId = urlParams.get('id');
+            
+            if (formId) {
+                // Try to load form data from localStorage
+                const savedData = localStorage.getItem('kaizen_' + formId);
+                
+                if (savedData) {
+                    try {
+                        const formData = JSON.parse(savedData);
+                        fillFormWithData(formData);
+                        alert('Kaizen suggestion loaded successfully!');
+                    } catch (e) {
+                        console.error('Error loading form data:', e);
+                        alert('Error loading the shared form data.');
+                    }
+                } else {
+                    alert('Could not find the shared Kaizen suggestion. It may have been deleted or expired.');
+                }
+            }
+        });
+        
+        // Handle form submission and link generation
+        document.getElementById('submitButton').addEventListener('click', function() {
+            // Basic validation
+            const requiredFields = ['name', 'date', 'title', 'current-condition', 'proposed-improvement'];
+            let allValid = true;
+            
+            for (let id of requiredFields) {
+                const field = document.getElementById(id);
+                if (!field.value.trim()) {
+                    field.style.borderColor = '#ff3b30';
+                    allValid = false;
+                } else {
+                    field.style.borderColor = '';
+                }
+            }
+            
+            if (!allValid) {
+                alert('Please fill in all required fields marked with *');
+                return;
+            }
+            
+            // Gather form data
+            const formData = {
+                name: document.getElementById('name').value,
+                date: document.getElementById('date').value,
+                department: document.getElementById('department').value,
+                shift: document.getElementById('shift').value,
+                title: document.getElementById('title').value,
+                currentCondition: document.getElementById('current-condition').value,
+                proposedImprovement: document.getElementById('proposed-improvement').value,
+                proposedWorkDate: document.getElementById('proposed-work-date').value || 'Not specified',
+                implementationTime: document.getElementById('implementation-time').value || 'Not specified',
+                trainingTime: document.getElementById('training-time').value || 'Not specified',
+                implementationDate: document.getElementById('implementation-date').value || 'Not specified'
+            };
+            
+            // Collect impact areas
+            const impactAreas = [];
+            document.querySelectorAll('input[name="impact_areas"]:checked').forEach(function(checkbox) {
+                impactAreas.push(checkbox.value);
+            });
+            formData.impactAreas = impactAreas;
+            
+            // Collect resources
+            const resources = [];
+            const rows = document.querySelectorAll('#resources-table tr:not(:first-child)');
+            rows.forEach(function(row) {
+                const item = row.querySelector('input[name="item[]"]').value;
+                const quantity = row.querySelector('input[name="quantity[]"]').value;
+                
+                if (item && quantity) {
+                    resources.push({item: item, quantity: quantity});
+                }
+            });
+            formData.resources = resources;
+            
+            // Generate a unique ID
+            const formId = generateUniqueId();
+            
+            // Save data to localStorage
+            localStorage.setItem('kaizen_' + formId, JSON.stringify(formData));
+            
+            // Create shareable link
+            const baseUrl = window.location.href.split('?')[0]; // Remove any existing query params
+            const shareableLink = baseUrl + '?id=' + formId;
+            
+            // Display the link
+            document.getElementById('shareLink').textContent = shareableLink;
+            document.getElementById('shareContainer').style.display = 'block';
+            
+            // Scroll to share section
+            document.getElementById('shareContainer').scrollIntoView({ behavior: 'smooth' });
+            
+            // Set up sharing buttons
+            document.getElementById('copyLink').addEventListener('click', function() {
+                copyToClipboard(shareableLink);
+                alert('Link copied to clipboard!');
+            });
+            
+            document.getElementById('textLink').addEventListener('click', function() {
+                const message = 'Check out my Kaizen suggestion: ' + shareableLink;
+                window.location.href = 'sms:?body=' + encodeURIComponent(message);
+            });
+            
+            document.getElementById('emailLink').addEventListener('click', function() {
+                const subject = 'Kaizen Suggestion: ' + formData.title;
+                const body = 'Check out my Kaizen suggestion: ' + shareableLink;
+                window.location.href = 'mailto:?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+            });
+        });
+        
+        // Helper function to generate a unique ID
+        function generateUniqueId() {
+            // Simple UUID-like generator
+            return 'xxxx-xxxx-xxxx-xxxx'.replace(/x/g, function() {
+                return Math.floor(Math.random() * 16).toString(16);
+            });
+        }
+        
+        // Helper function to fill the form with saved data
+        function fillFormWithData(data) {
+            // Basic fields
+            if (data.name) document.getElementById('name').value = data.name;
+            if (data.date) document.getElementById('date').value = data.date;
+            if (data.department) document.getElementById('department').value = data.department;
+            if (data.shift) document.getElementById('shift').value = data.shift;
+            if (data.title) document.getElementById('title').value = data.title;
+            if (data.currentCondition) document.getElementById('current-condition').value = data.currentCondition;
+            if (data.proposedImprovement) document.getElementById('proposed-improvement').value = data.proposedImprovement;
+            if (data.proposedWorkDate && data.proposedWorkDate !== 'Not specified') {
+                document.getElementById('proposed-work-date').value = data.proposedWorkDate;
+            }
+            if (data.implementationTime && data.implementationTime !== 'Not specified') {
+                document.getElementById('implementation-time').value = data.implementationTime;
+            }
+            if (data.trainingTime && data.trainingTime !== 'Not specified') {
+                document.getElementById('training-time').value = data.trainingTime;
+            }
+            if (data.implementationDate && data.implementationDate !== 'Not specified') {
+                document.getElementById('implementation-date').value = data.implementationDate;
+            }
+            
+            // Impact areas
+            if (data.impactAreas && Array.isArray(data.impactAreas)) {
+                data.impactAreas.forEach(function(area) {
+                    const checkbox = document.querySelector(`input[name="impact_areas"][value="${area}"]`);
+                    if (checkbox) checkbox.checked = true;
+                });
+            }
+            
+            // Resources
+            if (data.resources && Array.isArray(data.resources)) {
+                const rows = document.querySelectorAll('#resources-table tr:not(:first-child)');
+                data.resources.forEach(function(resource, index) {
+                    if (index < rows.length) {
+                        const itemInput = rows[index].querySelector('input[name="item[]"]');
+                        const quantityInput = rows[index].querySelector('input[name="quantity[]"]');
+                        
+                        if (itemInput && resource.item) itemInput.value = resource.item;
+                        if (quantityInput && resource.quantity) quantityInput.value = resource.quantity;
+                    }
+                });
+            }
+        }
+        
+        // Helper function to copy text to clipboard
+        function copyToClipboard(text) {
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+        }
+    </script>
+
+</body></html>
